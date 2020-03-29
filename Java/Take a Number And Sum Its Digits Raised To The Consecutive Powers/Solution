@@ -1,0 +1,25 @@
+import java.util.List;
+import java.util.ArrayList;
+
+class SumDigPower {
+    
+    public static List<Long> sumDigPow(long a, long b) {
+        List numbers = new ArrayList();
+        long sum=0;
+        
+        for (long i=a; i<=b; i++) {
+          long num = i;
+          long digits = String.valueOf(i).length();
+
+          for (int j=0; j<digits; j++) {
+            sum += (long) Math.pow((num%10),(digits-j)); 
+            num /= 10;
+            }
+          if (sum==i) { 
+            numbers.add(sum); }
+          sum = 0;
+
+        }
+        return numbers; 
+    }
+}
