@@ -1,0 +1,36 @@
+public class StockList { 
+  
+
+  public static String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
+    int[] sum;
+
+    //check for empty lists
+    if (lstOfArt.length==0 || lstOf1stLetter.length==0) {
+      return "" ;}      
+    else {
+      sum = new int[lstOf1stLetter.length];
+      String result = "";
+      
+      
+      //iterate through each category and add every instance to its total 
+      for (int i=0; i<lstOf1stLetter.length; i++) {        
+        result+=("(" + lstOf1stLetter[i] + " : ");
+        
+        for (int j=0; j<lstOfArt.length; j++) {
+          //get the category from every instance by extracting its first letter (e.g. 'A' from 'ABART 20')
+          String[] first_letter=lstOfArt[j].split(" ");
+          
+          if (lstOf1stLetter[i].charAt(0)==lstOfArt[j].charAt(0)) {
+            sum[i]+=Integer.parseInt(first_letter[1]);}
+        }
+        
+          if (i+1==lstOf1stLetter.length) {  
+            result+=(sum[i] + ")"); }
+          else {
+            result+=(sum[i] + ") - "); }
+      } 
+      return result;
+    }
+    
+    }     
+}
