@@ -1,0 +1,23 @@
+public class Xbonacci {
+
+  //'s' is the initial array aka signature
+  //the function will return the first n elements of the array  
+  public double[] tribonacci(double[] s, int n) {
+  
+      double[] first_n_elements = new double[n];
+      
+      if (n==0) {
+        double empty[] = {};
+        return empty;}
+      
+      else {
+        for (int i=0; i<n; i++) {
+          //transfer the first 3 elements of the signature to our resulting array
+          if (i<3) {
+            first_n_elements[i] = s[i];}
+          
+          else {
+          first_n_elements[i]=first_n_elements[i-1]+first_n_elements[i-2]+first_n_elements[i-3];}}
+          
+        
+        return first_n_elements;}}}
