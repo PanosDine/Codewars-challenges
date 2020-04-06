@@ -1,0 +1,10 @@
+def spin_words(sentence):
+    sentence = sentence.split(' ')
+    sentence2 = ''
+    for i in range(len(sentence)):
+          if len(sentence[i]) > 4:
+              sentence[i] = sentence[i][::-1]
+          sentence2 += sentence[i]
+          if i < (len(sentence)-1):
+              sentence2 += ' '
+    return sentence2
