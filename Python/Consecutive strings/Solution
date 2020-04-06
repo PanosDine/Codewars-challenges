@@ -1,0 +1,13 @@
+def longest_consec(strarr, k):
+    if (len(strarr)==0) or (k>len(strarr)) or (k<=0):
+        return ""
+    else:
+        longest = strarr[0]
+        
+        for i in range(len(strarr)-(k-1)):
+            current = ''
+            for j in range(k):
+                current += strarr[i+j]
+            if len(current) > len(longest):
+                longest = current
+    return longest
