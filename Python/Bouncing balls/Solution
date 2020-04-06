@@ -1,0 +1,9 @@
+def bouncingBall(h, bounce, window):
+    result = 0
+    if (h>=0) and (bounce>=0) and (bounce<1) and (window<h):
+        while window < h:
+            h *= bounce
+            result += 2
+        return result-1
+    else:
+        return -1
